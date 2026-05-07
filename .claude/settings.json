@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker --version)",
+      "Bash(curl -sI https://wordpress.org/wordpress-6.9.4.zip)",
+      "Bash(curl -s https://api.wordpress.org/core/version-check/1.7/)",
+      "WebFetch(domain:www.marxokubo.com)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" https://www.marxokubo.com/ -o home.html)",
+      "Bash(docker version *)",
+      "Bash(chmod +x /Users/brian/src/njpc/setup.sh)",
+      "Bash(bash setup.sh)",
+      "Bash(curl -fsS http://localhost:8080/ -o /tmp/njpc_home.html)",
+      "Bash(echo \"HTTP=$?\")",
+      "Bash(curl -fsS http://localhost:8080/)",
+      "Bash(curl -fsS -o /dev/null -w \"HTTP %{http_code}, %{size_download} bytes\\\\n\" http://localhost:8080/)",
+      "Bash(curl -fsS -o /dev/null -w \"CSS HTTP %{http_code}, %{size_download} bytes\\\\n\" \"http://localhost:8080/wp-content/themes/marx-clone/assets/css/main.css\")",
+      "Bash(curl -sL \"https://www.marxokubo.com/_astro/BaseLayout.-ff95h8x.css\" -o /tmp/mo.css)",
+      "Bash(grep -oE 'logo[^{]{0,40}\\\\{[^}]{0,200}\\\\}' /tmp/mo.css)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" https://www.marxokubo.com/)",
+      "Bash(curl -fsS -o /dev/null -w \"Home HTTP %{http_code}\\\\n\" http://localhost:8080/)",
+      "Bash(curl -fsS -o /dev/null -w \"Admin HTTP %{http_code}\\\\n\" \"http://localhost:8080/wp-admin/edit.php?post_type=mc_photo\")"
+    ]
+  }
+}
